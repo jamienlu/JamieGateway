@@ -1,0 +1,30 @@
+
+### POST rpc
+POST http://localhost:9301/gw/rpc/cn.jamie.discorridor.demo.api.UserService
+Content-Type: application/json
+
+{
+  "service": "cn.jamie.discorridor.demo.api.UserService",
+  "methodSign": "findById/long",
+  "args": [100]
+}
+
+### POST direct
+POST http://localhost:9301/gw/direct/cn.jamie.discorridor.demo.api.UserService
+Content-Type: application/json
+
+{
+  "service": "cn.jamie.discorridor.demo.api.UserService",
+  "methodSign": "findById/long",
+  "args": [100]
+}
+
+### POST direct backend
+POST http://localhost:9301/gw/direct/cn.kimmking.kkrpc.demo.api.UserService?backend=http://localhost:8081/rpc/services
+Content-Type: application/json
+
+{
+  "service": "cn.jamie.discorridor.demo.api.UserService",
+  "methodSign": "findById/long",
+  "args": [100]
+}
